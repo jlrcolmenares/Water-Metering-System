@@ -10,49 +10,49 @@ Some prerequisites or useful knowledge
 * Fundamentals of SQL (How to create table and write queries)
 * Basic knowledge of Docker and Docker Compose
 
-------
-
-
-
 ##### **TABLE OF CONTENTS**
 
 [README - Español](#readme---español)
 
-.	[A - Inicio Rápido](#a-inicio-rápido)
+​    [A - Inicio Rápido](#a-inicio-rápido)
 
-.		[1. Instalar Docker en tu PC](#1-instalar-docker-en-tu-pc)
+​         [1. Instalar Docker en tu PC](#1-instalar-docker-en-tu-pc)
 
-.		[2. Crear el entorno de multi-contenedores con docker-compose](#2-crear-el-entorno-de-multi-contenedores-con-docker-compose)
+​         [2. Crear el entorno de multi-contenedores con docker-compose](#2-crear-el-entorno-de-multi-contenedores-con-docker-compose)
 
-.		[3. Crear base de datos 'logs' en la instancia de PostgreSQL](#3-crear-base-de-datos-logs-en-la-instancia-de-postgresql)
+​         [3. Crear base de datos 'logs' en la instancia de PostgreSQL](#3-crear-base-de-datos-logs-en-la-instancia-de-postgresql)
 
-.		[4. Crear el generador de datos aleatorios en la instancia de Node-Red](#4-crear-el-generador-de-datos-aleatorios-en-la-instancia-de-node-red)
+​         [4. Crear el generador de datos aleatorios en la instancia de Node-Red](#4-crear-el-generador-de-datos-aleatorios-en-la-instancia-de-node-red)
 
-.		[5. Abrir Grafana e importar el dashboard creado](#5-abrir-grafana-e-importar-el-dashboard-creado)
+​         [5. Abrir Grafana e importar el dashboard creado](#5-abrir-grafana-e-importar-el-dashboard-creado)
 
-.		[6. Fin](#6-fin)
+​         [6. Fin](#6-fin)
 
 [README - English](#readme---english)
 
 
 
-
+------
 
 ![](https://joseluisramoncolmenares.files.wordpress.com/2020/06/bannergrafanadashboard1.png)
 
 
 
-## README - Español
+## README [Español]
 
-### A. Inicio Rápido
+### A-Inicio Rápido
 
 Si lo que quieres es tener un ambiente idéntico al que muestro en la imagen superior lo que debes hacer es,
 
-#### 1. Instalar Docker en tu PC
+#### A1-Docker
+
+**Instalar Docker en tu PC**:
 
 Si no tienes Docker instalado puedes seguir los tutoriales de instalación que indico [aquí](https://joseluisramoncolmenares.wordpress.com/2020/06/18/como-configurar-docker-para-tus-proyectos/)
 
-#### 2. Crear el entorno de multi-contenedores con docker-compose
+#### A2-Docker-compose
+
+**Crear el entorno de multi-contenedores con docker-compose**
 
 El siguiente paso es abrir tu línea de comandos y mover el directorio de trabajo al directorio `src/compose_grafa` dentro estará únicamente el archivo **[docker-compose.yaml](https://docs.docker.com/compose/)**. Una vez dentro de la carpeta ejecutar el comando `docker-compose up` para iniciar el entorno de multi-contenedores.
 
@@ -62,7 +62,9 @@ En el Dashboard de contenedores se debería ver multicontenedor de nombre compos
 * compose_grafana_db_1
 * compose_grafaba_grafana_1
 
-#### 3. Crear base de datos 'logs' en la instancia de PostgreSQL
+#### A3-PostgreSQL
+
+**Crear base de datos 'logs' en la instancia de PostgreSQL**
 
 Esto también lo pueden hacer desde la línea de comando. A continuación te doy el paso a paso: 
 
@@ -100,7 +102,9 @@ grafana=# \d logs
 
 Con esto listo puedes pasar al siguiente paso. Te recomiendo dejar la línea de comando abierta para realizar algunos query más adelante
 
-#### 4. Crear el generador de datos aleatorios en la instancia de Node-Red
+#### A4-Node-RED
+
+**Crear el generador de datos aleatorios en la instancia de Node-Red**
 
 Abrir el contenedor de node-red o ir directamente a tu navegador y acceder a la dirección **localhost:1880**. Una haya cargado la página, acceder al menú que se encuentra en la esquina superior derecha e ir a la sección *Manage palette*.
 
@@ -110,7 +114,9 @@ Una vez instalado, hacer click nuevamente al menú de la esquina superior derech
 
 Por último hacer click en **Deploy** para que se empiecen a escribir datos en la tabla 'logs' de la base de datos. Revisar el debug de node-red para validar que no haya ningún problema. 
 
-#### 5. Abrir grafana e importar el dashboard creado
+#### A5-Grafana
+
+**(Abrir grafana e importar el dashboard creado)**
 
 Abrir el contenedor de grafana o ir directamente a tu navegador y acceder a la dirección **localhost:3000**. Esto abrirá una ventana para hacer log. Para ingresar, la combinación [usuario/contraseña] es [admin/admin]. Seguidamente se procederá se te pedirá cambiar la clave de acceso al usuario 'admin'. Usar la de tu preferencia.
 
@@ -132,12 +138,46 @@ Una vez confirmada la conexión, buscar en el menú izquierdo la pestaña *'Dash
 
 Al hacer click se abrirá una ventana. Una vez allí debes darle click al botón 'Upload .json file' y cargar el archivo **grafana-dashboard.json** que se encuentra en el directorio /src. Asignarle Folser: General y borrar el Unique Identifier para que Grafana lo asigne automáticamente.
 
-#### 6. Vídeo y Fin
+#### A6-Vídeo
 
 Con todo lo anterior funcionando ya puedes empezar a jugar con tu repo. En este [vídeo](https://youtu.be/UO6tl2n1UvE) les explico el proceso y la motivación detrás de este proyecto.
 
 
 
+## B-Mejoras
+
+Si bien con los archivos que disponibles en este repo el proyecto está funcionando. Sería interesante poder agregarle otras capacidades. He pensado en algunas de ellas y las agrupo en 4 grandes áreas.
+
+### B1-PostgreSQL
+
+**(Almacenamiento)**
+
+* Trabajar con entidades separadas en vez de escribir en una única tabla.
+* Escribir directamente en la tablas de cada una de las entidades
+* Crear el query que me produzcan la tabla 'logs'.
+
+### B2-Node-RED
+
+**(Generación de Datos)**
+
+* Simplificar la forma en que se escriben los datos en la bases de datos. 
+* Utilizar nodos JOIN para unir las lecturas generadas por cada uno de los medidores y escribir en la base de datos una única vez
+* Generación de datos más realistas. Que sigan un patrón o una función.
+
+### B3-Grafana
+
+**Visualización de Datos** 
+
+* Generar alarmas dentro de Grafana, que aparezcan en el tablero
+* Descargar los datos de un usuario por medio de grafana. 
+* Utilizar fuentes de datos adicionales.
+
+### B4-Python
+
+**(Manipulación de datos / Visualización)**
+
+* Descargar el historico de los datos generados. Darles formato con Pandas.
+* Generar reportes históricos del consumo de una distrito y cualquier otro reporte de interés.
 
 
 
@@ -145,13 +185,12 @@ Con todo lo anterior funcionando ya puedes empezar a jugar con tu repo. En este 
 
 
 
+------
 
-
-
-## README - English
+## README [English]
 
 Hi! The objective with this project is to give you the opportunity to build you own dashboard with grafana. This video comes with a video explanation
 
-### A. Easy Start
+### A-Easy Start
 
 [Waiting for confirmation of spanish users]
