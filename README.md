@@ -14,15 +14,35 @@ Some prerequisites or useful knowledge
 
 
 
-**TABLE OF CONTENTS**
+##### **TABLE OF CONTENTS**
 
-[TOC]
+[README - Español](#readme---español)
+
+​	[A - Inicio Rápido](#a-inicio-rápido)
+
+​		[1. Instalar Docker en tu PC](#1-instalar-docker-en-tu-pc)
+
+​		[2. Crear el entorno de multi-contenedores con docker-compose](#2-crear-el-entorno-de-multi-contenedores-con-docker-compose)
+
+​		[3. Crear base de datos 'logs' en la instancia de PostgreSQL](#3-crear-base-de-datos-logs-en-la-instancia-de-postgresql)
+
+​		[4. Crear el generador de datos aleatorios en la instancia de Node-Red](#4-crear-el-generador-de-datos-aleatorios-en-la-instancia-de-node-red)
+
+​		[5. Abrir Grafana e importar el dashboard creado](#5-abrir-grafana-e-importar-el-dashboard-creado)
+
+​		[6. Fin](#6-fin)
+
+[README - English](#readme---english)
+
+
+
+
 
 ![](https://joseluisramoncolmenares.files.wordpress.com/2020/06/bannergrafanadashboard1.png)
 
 
 
-## README - Español
+## [README - Español](##Spanish)
 
 ### A. Inicio Rápido
 
@@ -38,9 +58,9 @@ El siguiente paso es abrir tu línea de comandos y mover el directorio de trabaj
 
 En el Dashboard de contenedores se debería ver multicontenedor de nombre compose_grafaba (como la carpeta que lo contiene) y que tiene 3 subcontenedores
 
-* compose_grafana**_node-red_1**
-* compose_grafana**_db_1**
-* compose_grafaba**_grafana_1**
+* compose_grafana_node-red_1
+* compose_grafana_db_1
+* compose_grafaba_grafana_1
 
 #### 3. Crear base de datos 'logs' en la instancia de PostgreSQL
 
