@@ -18,19 +18,19 @@ Some prerequisites or useful knowledge
 
 [README - Español](#readme---español)
 
-​	[A - Inicio Rápido](#a-inicio-rápido)
+.	[A - Inicio Rápido](#a-inicio-rápido)
 
-​		[1. Instalar Docker en tu PC](#1-instalar-docker-en-tu-pc)
+.		[1. Instalar Docker en tu PC](#1-instalar-docker-en-tu-pc)
 
-​		[2. Crear el entorno de multi-contenedores con docker-compose](#2-crear-el-entorno-de-multi-contenedores-con-docker-compose)
+.		[2. Crear el entorno de multi-contenedores con docker-compose](#2-crear-el-entorno-de-multi-contenedores-con-docker-compose)
 
-​		[3. Crear base de datos 'logs' en la instancia de PostgreSQL](#3-crear-base-de-datos-logs-en-la-instancia-de-postgresql)
+.		[3. Crear base de datos 'logs' en la instancia de PostgreSQL](#3-crear-base-de-datos-logs-en-la-instancia-de-postgresql)
 
-​		[4. Crear el generador de datos aleatorios en la instancia de Node-Red](#4-crear-el-generador-de-datos-aleatorios-en-la-instancia-de-node-red)
+.		[4. Crear el generador de datos aleatorios en la instancia de Node-Red](#4-crear-el-generador-de-datos-aleatorios-en-la-instancia-de-node-red)
 
-​		[5. Abrir Grafana e importar el dashboard creado](#5-abrir-grafana-e-importar-el-dashboard-creado)
+.		[5. Abrir Grafana e importar el dashboard creado](#5-abrir-grafana-e-importar-el-dashboard-creado)
 
-​		[6. Fin](#6-fin)
+.		[6. Fin](#6-fin)
 
 [README - English](#readme---english)
 
@@ -42,7 +42,7 @@ Some prerequisites or useful knowledge
 
 
 
-## [README - Español](##Spanish)
+## README - Español
 
 ### A. Inicio Rápido
 
@@ -132,9 +132,9 @@ Una vez confirmada la conexión, buscar en el menú izquierdo la pestaña *'Dash
 
 Al hacer click se abrirá una ventana. Una vez allí debes darle click al botón 'Upload .json file' y cargar el archivo **grafana-dashboard.json** que se encuentra en el directorio /src. Asignarle Folser: General y borrar el Unique Identifier para que Grafana lo asigne automáticamente.
 
-#### 6. Fin
+#### 6. Vídeo y Fin
 
-Con todo lo anterior funcionando ya puedes empezar a jugar con tu repo
+Con todo lo anterior funcionando ya puedes empezar a jugar con tu repo. En este [vídeo](https://youtu.be/UO6tl2n1UvE) les explico el proceso y la motivación detrás de este proyecto.
 
 
 
