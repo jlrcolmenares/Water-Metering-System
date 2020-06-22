@@ -1,0 +1,35 @@
+version: "2.1"
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DATABASE: grafana
+      POSTGRES_USER: grafana
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d grafana -U grafana"]
+      timeout: 10s
+      retries: 10
+
+  grafana:
+    image: grafana/grafana:latest
+    environment:
+      - GF_DATABASE_TYPE=postgres
+      - GF_DATABASE_HOST=db:5432
+      - GF_DATABASE_USER=grafana
+      - GF_DATABASE_PASSWORD=password
+      - GF_DATABASE_SSL_MODE=disable
+    ports:
+      - 3000:3000
+    depends_on:
+      db:
+        condition: service_healthy
+
+  node-red:
+    image: nodered/node-red-docker
+    ports:
+      - 1880:1880
+
