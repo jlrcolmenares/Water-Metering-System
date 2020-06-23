@@ -2,33 +2,13 @@
 
 The idea of the following is to give you all the instructions and files to build a dashboard with Grafana. This environment is build using docker-compose app with three containers: Node-Red as a data generator. PostgreSQL as Databases and Grafana for Data visualization in real time. 
 
-I'm writing this repo both in spanish and english. Use te table of content to go to the right part of readme. 
+I'm writing this repo both in spanish and english. 
 
-Some prerequisites or useful knowledge
+Some prerequisites or useful knowledge:
 
 * Fundamentals a Javascript (Declaring variables and functions)
 * Fundamentals of SQL (How to create table and write queries)
 * Basic knowledge of Docker and Docker Compose
-
-##### **TABLE OF CONTENTS**
-
-[README - Español](#readme---español)
-
-​    [A - Inicio Rápido](#a-inicio-rápido)
-
-​         [1. Instalar Docker en tu PC](#1-instalar-docker-en-tu-pc)
-
-​         [2. Crear el entorno de multi-contenedores con docker-compose](#2-crear-el-entorno-de-multi-contenedores-con-docker-compose)
-
-​         [3. Crear base de datos 'logs' en la instancia de PostgreSQL](#3-crear-base-de-datos-logs-en-la-instancia-de-postgresql)
-
-​         [4. Crear el generador de datos aleatorios en la instancia de Node-Red](#4-crear-el-generador-de-datos-aleatorios-en-la-instancia-de-node-red)
-
-​         [5. Abrir Grafana e importar el dashboard creado](#5-abrir-grafana-e-importar-el-dashboard-creado)
-
-​         [6. Fin](#6-fin)
-
-[README - English](#readme---english)
 
 
 
@@ -56,7 +36,7 @@ Si no tienes Docker instalado puedes seguir los tutoriales de instalación que i
 
 El siguiente paso es abrir tu línea de comandos y mover el directorio de trabajo al directorio `src/compose_grafa` dentro estará únicamente el archivo **[docker-compose.yaml](https://docs.docker.com/compose/)**. Una vez dentro de la carpeta ejecutar el comando `docker-compose up` para iniciar el entorno de multi-contenedores.
 
-En el Dashboard de contenedores se debería ver multicontenedor de nombre compose_grafaba (como la carpeta que lo contiene) y que tiene 3 subcontenedores
+En el Dashboard de contenedores se debería ver multicontenedor de nombre compose_grafana (como la carpeta que lo contiene) y que tiene 3 subcontenedores
 
 * compose_grafana_node-red_1
 * compose_grafana_db_1
@@ -176,7 +156,7 @@ Si bien con los archivos que disponibles en este repo el proyecto está funciona
 
 **(Manipulación de datos / Visualización)**
 
-* Descargar el historico de los datos generados. Darles formato con Pandas.
+* Descargar el histórico de los datos generados. Darles formato con Pandas.
 * Generar reportes históricos del consumo de una distrito y cualquier otro reporte de interés.
 
 
